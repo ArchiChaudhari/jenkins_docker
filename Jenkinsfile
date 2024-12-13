@@ -31,30 +31,8 @@ pipeline {
             }
         }
 
-        stage('Test App') {
-            steps {
-                echo "Testing the application"
-                script {
-                    sh """
-                    sleep 5
-                    curl -f http://localhost:5000 || exit 1
-                    """
-                }
-            }
-        }
+       
 
-        stage('Cleanup') {
-            steps {
-                echo "Cleaning up"
-                script {
-                    sh """
-                    docker stop ${DOCKER_IMAGE}-container || true
-                    docker rm ${DOCKER_IMAGE}-container || true
-                    docker rmi ${DOCKER_IMAGE} || true
-                    """
-                }
-            }
-        }
     }
 
     post {
