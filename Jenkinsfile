@@ -31,11 +31,6 @@ pipeline {
             }
         }
 
-        stage('Test App') {
-            steps { echo "tested"
-                  }
-        }
-
         stage('Cleanup') {
             steps {
                 echo "Cleaning up"
