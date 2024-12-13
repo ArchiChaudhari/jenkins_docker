@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "python-docker-app"
+        DOCKER_IMAGE = "python-docker"
     }
 
     stages {
