@@ -31,6 +31,18 @@ pipeline {
             }
         }
 
+        stage('Test App') {
+            steps {
+                echo "Testing the application"
+                script {
+                    sh """
+                    sleep 5
+                    curl -f http://localhost:5000 || exit 1
+                    """
+                }
+            }
+        }
+
         stage('Cleanup') {
             steps {
                 echo "Cleaning up"
