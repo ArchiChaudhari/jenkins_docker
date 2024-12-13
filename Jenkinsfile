@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo "Running the Docker container"
                 script {
-                    sh "docker run -d -p 5001:5001 --name ${DOCKER_IMAGE}-container ${DOCKER_IMAGE}"
+                    sh "docker run -d -p 5000:5000 --name ${DOCKER_IMAGE}-container ${DOCKER_IMAGE}"
                 }
             }
         }
